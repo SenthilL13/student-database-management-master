@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Student to Update</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Select Student to Update</h2>
+        <table class="table table-striped mt-4">
+            <thead>
+                <tr>
+                    <th>Reg No</th>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Sex</th>
+                    <th>Department</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Mail</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in student_record %}
+                <tr>
+                    <td>{{ student['reg_no'] }}</td>
+                    <td>{{ student['name'] }}</td>
+                    <td>{{ student['dob'] }}</td>
+                    <td>{{ student['sex'] }}</td>
+                    <td>{{ student['department'] }}</td>
+                    <td>{{ student['address'] }}</td>
+                    <td>{{ student['contact'] }}</td>
+                    <td>{{ student['mail'] }}</td>
+                    <td>
+                        <a href="{{ url_for('update', reg_no=student['reg_no']) }}" class="btn btn-warning btn-sm">Update</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

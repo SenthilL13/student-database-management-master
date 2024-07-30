@@ -1,0 +1,30 @@
+body {
+    background-image: url('img.jpg');
+    /* Additional CSS properties for background */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Ensures the image covers the entire background */
+
+}
+
+
+h1, h2 {
+    color: #343a40;
+}
+
+/* Styling for table header */
+.table thead th {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 12px; /* Adjust padding as needed */
+    text-align: left; /* Align text to the left */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on background color change */
+}
+
+/* Hover effect */
+.table thead th:hover {
+    background-color: #495057; /* Darken the background color on hover */
+}
+.table tbody td {
+    color: #ffffff;
+}
